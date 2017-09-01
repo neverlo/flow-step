@@ -7,14 +7,15 @@
     flow-step({
         //设定流程执行步骤
         init: function() {
-            this.next('getUserInfo').then() //获取用户信息（异步）
+            this.next('getUserInfo', {name: 'cat'}).then() //获取用户信息（异步）
                 .next('updateUserInfo').then() //更新用户信息（异步）
                 .next('sendSMS') //发送短信消息（同步）
                 .end((err, data) => {
                     //todo
                 })
         },
-        getUserInfo: function(callback) {
+        getUserInfo: function(needles, callback) {
+            //needles is => {name: 'cat'}
             setTimeout(() => {
                 callback && callback(null, null, {name: 'tom'})
             }, 1000)
