@@ -5,10 +5,11 @@
     const flow-step = require('flow-step')
 
     flow-step({
+        //设定流程执行步骤
         init: function() {
-            this.next('getUserInfo').then()
-                .next('updateUserInfo').then()
-                .next('sendSMS')
+            this.next('getUserInfo').then() //获取用户信息（异步）
+                .next('updateUserInfo').then() //更新用户信息（异步）
+                .next('sendSMS') //发送短信消息（同步）
                 .end((err, data) => {
                     //todo
                 })
@@ -27,8 +28,7 @@
                 //callback({msg:'执行异常'})
                 callback && callback()
             }, 1000)
-        }
-        ,
+        },
         sendSMS: function() {
             console.log('send')
         }
