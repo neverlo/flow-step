@@ -1,0 +1,17 @@
+{
+  "name": "flow-step",
+  "version": "1.0.0",
+  "description": "a js framework for work to simple.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flow",
+    "step",
+    "js",
+    "node"
+  ],
+  "author": "rex_mark",
+  "license": "ISC"
+}
